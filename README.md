@@ -29,5 +29,29 @@ This project demonstrates how to build and deploy a backend REST API.
 ```bash
 git clone https://github.com/amshumanshetty/SuperHero-API.git
 cd SuperHero-API
+
 2️⃣ Install dependencies
-bash
+npm install
+
+3️⃣ Add Environment Variables
+
+Create a .env file in the root directory and add:
+
+SUPERHERO_API_KEY=your_api_key_here
+PORT=3000
+
+
+Get your API key from: https://superheroapi.com/
+
+▶️ Run the Project Locally
+npm start
+
+
+or
+
+node index.js
+
+
+Server will run at:
+
+http://localhost:3000
