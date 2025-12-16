@@ -37,10 +37,10 @@ npm install
 ### 3️⃣ Add Environment Variables
 
 Create a .env file in the root directory and add:
-
+```bash
 SUPERHERO_API_KEY=your_api_key_here
 PORT=3000
-
+```
 
 Get your API key from: https://superheroapi.com/
 
