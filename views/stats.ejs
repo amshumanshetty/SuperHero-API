@@ -1,116 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperHero</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-<style>
-  body{
-    margin : 0;
-  }
-
-  .no-underline-hover {
-    text-decoration: none;
-  }
-
-  .no-underline-hover:hover {
-    text-decoration: underline;
-  }
-
-  .full-bg {
-    background-image: url('images/background2.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 95vh;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Stats</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Header Styling */
+    header {
+      background: rgba(15, 12, 41, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
-  .hero-container {
-    text-align: center;
-  }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
 
-  .hero-image {
-    max-width: 350px;  
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 20px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
+    .nav-link-custom {
+      color: #e0e0e0 !important;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+    }
 
-  .hero-stats {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #f8f9fa;
-  }
+    .nav-link-custom:hover {
+      text-decoration: underline;
+    }
 
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-</style>
+    body {
+      margin: 0;
+      background-color: white;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .no-underline-hover {
+      text-decoration: none;
+    }
+
+    .no-underline-hover:hover {
+      text-decoration: underline;
+    }
+
+    .header-content {
+      display: flex;
+    }
+
+    .full-bg {
+      background-color: #f8f9fa;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 92vh;
+    }
+
+    .hero-container {
+      display: flex;
+      gap: 40px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-img {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero-image {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 70px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-name {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-left: 40px;
+      color: #070000;
+    }
+
+    .hero-info {
+      width: 50%;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2d2c2c;
+    }
+
+    .hero-stats {
+      margin-left: 70px;
+    }
+
+    .hero-appearance {
+      margin-left: 70px;
+    }
+
+    .hero-list {
+      font-weight: 300;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hero-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .hero-list li:last-child {
+      border-bottom: none;
+    }
+
+    .hero-list strong {
+      min-width: 140px;
+      color: #2d2c2c;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero-list li span {
+      color: #555;
+    }
+
+    .hero-stats h2 {
+      text-decoration: underline;
+    }
+
+    .hero-appearance h2 {
+      text-decoration: underline;
+    }
+
+    /* Bar Graph Styling */
+    .stat-container {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .stat-name {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2d2c2c;
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+
+    .stat-bar-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .stat-bar {
+      height: 20px;
+      background: #667eea;
+      border-radius: 8px;
+    }
+
+    .stat-value {
+      color: #667eea;
+      font-size: 0.9rem;
+      font-weight: 600;
+      min-width: 35px;
+      text-align: right;
+    }
+  </style>
 
 </head>
 
-<body class="m-0 bg-dark">
-<header class="d-flex justify-content-between align-items-center py-3 px-0 mb-0 bg-dark w-100 border-bottom">
+<body class=" bg-dark">
+  <header class="d-flex justify-content-between align-items-center py-3 px-4 w-100">
+    <div class="d-flex align-items-center flex-grow-1 gap-3" style="min-width: 0;">
+      <a href="/" class="text-decoration-none flex-shrink-0">
+        <div class="logo">⚡ MyHeroStats</div>
+      </a>
 
-<div class="d-flex justify-content-between align-items-center">
-  <h1 class="d-flex align-items-center text-white text-decoration-none ms-3">
-    <a href="/" class="d-flex align-items-center text-white text-decoration-none ms-3">
-    <span class="fs-2 text-white fw-bold m-0">MyHeroStats</span>
-  </a>
-  </h1>
-  
-</div>
-
-  <ul class="nav nav-pills me-3">
-    <li class="nav-item">
-      <a href="/" class="btn btn-link text-white no-underline-hover" aria-current="page">Home</a>
-    </li>
-    <li class="nav-item">
-      <a href="/id" class="btn btn-link text-white no-underline-hover">Character ID's</a>
-    </li>
-  </ul>
-</header> 
-
-
-<div class="full-bg">
-  <div class="mx-1" style="padding-top: 10px; padding-right: 80vw;">
-
-    <form class="w-100 d-flex justify-content-center" id="hero-form" method="post" action="/stats">
-      <div class="input-group" style="max-width: 300px; width: 100%;">
-        <input type="number" name="id" class="form-control" placeholder="Enter Hero ID" id="hero-id" required min="1" max="731">
-        <button class="btn btn-dark" type="submit">Get Hero Stats</button>
-      </div>
-    </form>
-
-  </div>
-
-  <div class="hero-container">
-    <% if (heroImg) { %>
-      <img src="<%= heroImg %>" alt="Hero Image" class="hero-image" />
-    <% } else { %>
-      <p class="text-danger mt-4">No image found for this ID.</p>
-    <% } %>
-
-        <div class="hero-stats">
-            <h3><%= heroName %></h3>
-      <ul class="list-unstyled">
-        <% for (let stat in herostat) { %>
-          <li><strong><%= stat.toUpperCase() %>:</strong> <%= herostat[stat] %></li>
-        <% } %>
-      </ul>
+      <form id="hero-form" method="post" action="/stats" class="flex-grow-1" style="min-width: 0;">
+        <div class="input-group w-100">
+          <input type="number" name="id" id="hero-id" class="form-control" placeholder="Enter Hero ID (1–731)" required
+            min="1" max="731" style="max-width: 250px;">
+          <button class="btn btn-secondary" type="submit">Search</button>
         </div>
+      </form>
+    </div>
+
+    <ul class="nav nav-pills mb-0">
+      <li class="nav-item">
+        <a href="/" class="nav-link-custom">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/id" class="nav-link-custom">Character IDs</a>
+      </li>
+    </ul>
+  </header>
+
+
+
+  <div class="full-bg">
+
+    <div class="hero-container">
+
+      <div class="hero-info">
+        <h1 class="hero-name">
+          <%= heroName %>
+        </h1>
+        <div class="hero-stats">
+          <h2>Powerstats</h2>
+          <% for (let stat in herostat) { %>
+            <div class="stat-container">
+              <span class="stat-name">
+                <%= stat %>
+              </span>
+              <div class="stat-bar-wrapper">
+                <div class="stat-bar" style="width: <%= herostat[stat] %>%"></div>
+                <span class="stat-value">
+                  <%= herostat[stat] %>
+                </span>
+              </div>
+            </div>
+            <% } %>
+        </div>
+
+        <div class="hero-appearance">
+          <h2>Appearance</h2>
+          <ul class="hero-list">
+            <% for (let app in heroApp) { %>
+              <li>
+                <strong>
+                  <%= app.toUpperCase() %>:
+                </strong>
+                <span>
+                  <% if (Array.isArray(heroApp[app])) { %>
+                    <%= heroApp[app].join(', ') %>
+                  <% } else { %>
+                    <%= heroApp[app] %>
+                  <% } %>
+                </span>
+              </li>
+            <% } %>
+    </ul>
+  </div>
   </div>
 
-</div>
+  <div class="hero-img">
+      <% if (heroImg) { %>
+        <div style="text-align: center; padding: 20px;">
+          <p style="color: #666; margin-bottom: 15px;">
+            <strong>Hero Image Available</strong>
+          </p>
+          <a href="<%= heroImg %>" 
+             target="_blank" 
+             class="btn btn-primary"
+             style="padding: 12px 30px; font-size: 1.1rem; border-radius: 8px; text-decoration: none;">
+            🖼️ View Hero Image
+          </a>
+          <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">
+            (Opens in new tab)
+          </p>
+        </div>
+        <% } else { %>
+          <p class="text-danger mt-4">No image URL found for this hero.</p>
+          <% } %>
+        </div>
+
+
+        </div>
+
 
 </body>
+
 </html>
