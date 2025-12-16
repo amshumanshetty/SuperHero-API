@@ -10,7 +10,6 @@ This project demonstrates how to build and deploy a backend REST API.
 - Fetch superhero data by ID or name
 - RESTful API endpoints
 - Built with **Node.js** and **Express**
-- Ready for deployment on platforms like **Render** or **Railway**
 
 ---
 
