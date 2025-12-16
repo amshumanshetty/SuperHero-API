@@ -23,17 +23,6 @@ This project demonstrates how to build and deploy a backend REST API.
 
 ---
 
-## 📁 Project Structure
-
-SuperHero-API/
-│
-├── index.js
-├── package.json
-├── package-lock.json
-└── README.md
-
----
-
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
